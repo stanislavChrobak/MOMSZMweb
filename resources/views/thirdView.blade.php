@@ -1,0 +1,1 @@
+<h1> 3 hodnota premennej: {{$variable}} </h1>
