@@ -14,9 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
+/*
 Route::get('/first', function () {
     return view('first');
 });
@@ -24,3 +25,4 @@ Route::get('/first', function () {
 Route::get('/second', [\App\Http\Controllers\SimpleController::class, 'view']);
 
 Route::get('/third', [\App\Http\Controllers\SimpleController::class, 'viewData']);
+*/
