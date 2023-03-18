@@ -16,8 +16,9 @@
     <!-- Header -->            
     @include('header')
     <!-- Content -->  
-    
-    
+    @foreach($articles as $key => $value)
+        <p>{{ $key }}: {{ $value }}</p>
+    @endforeach
     <!-- Footer -->  
     @include('footer')
 
