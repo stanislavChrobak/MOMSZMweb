@@ -2,8 +2,7 @@
     <div class="container bg-light px-1">
         <!-- Top navbar --> 
         <nav class="nav justify-content-end">
-            <a class="nav-link disabled" href="#">Prihlásiť</a>
-            <a class="nav-link active" href="#">Registrovať</a>
+            <a class="nav-link active" href="{{ asset('login') }}">Prihlásiť</a>
         </nav>
 
         <!-- Banner-->

@@ -15,12 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [\App\Http\Controllers\ArticleController::class, 'GetLastFiveArticles']);
 
-/*
-Route::get('/first', function () {
-    return view('first');
+Route::get('/login', function () {
+    return view('login');
 });
 
-Route::get('/second', [\App\Http\Controllers\SimpleController::class, 'view']);
-
-Route::get('/third', [\App\Http\Controllers\SimpleController::class, 'viewData']);
-*/
+Route::post('/submit-login-form', [\App\Http\Controllers\AdministratorController::class, 'UserLogin']);
