@@ -19,6 +19,7 @@ class ArticleFactory extends Factory
         return [
             'name' => $this->faker->sentence(3, false),
             'text' => $this->faker->text(350),
+            'imgPath' => "images/2.jpg",
         ];
     }
 }

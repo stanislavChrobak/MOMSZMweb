@@ -16,9 +16,29 @@
     <!-- Header -->            
     @include('header')
     <!-- Content -->  
-    @foreach($articles as $key => $value)
-        <p>{{ $key }}: {{ $value }}</p>
-    @endforeach
+    <div class="container bg-light px-1">   
+        @php
+            use Illuminate\Support\Str;
+        @endphp
+
+        @for($i = 0; $i <  $articlesCount  ; $i++ )
+
+            <article class="container-fluid my-3 py-2" style="background-color: #E4DCCF;">
+                <div class="row">
+                    <div class="col-sm-4  text-center d-flex align-items-center">
+                        <img class="img-fluid mx-auto" src="{{ asset($articles[$i]['imgPath']) }}" style="height: 250px;">
+                    </div>
+                    <div class="col-sm-8">
+                        <h2>{{Str::limit($articles[$i]['name'], 30, '...')}}</h2>
+                        <p class="text-justify">{{Str::limit($articles[$i]['text'], 300, '...')}}</p>
+                        <p>{{$articles[$i]['created_at']}}</p>
+                        <a href="#">Čítať viac...</a>
+                    </div>
+                </div>
+            </article>
+        @endfor
+    </div>
+
     <!-- Footer -->  
     @include('footer')
 

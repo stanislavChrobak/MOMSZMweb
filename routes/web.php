@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [\App\Http\Controllers\ArticleController::class, 'GetLastFiveArticlesAbbreviate']);
+Route::get('/', [\App\Http\Controllers\ArticleController::class, 'GetLastFiveArticles']);
 
 /*
 Route::get('/first', function () {

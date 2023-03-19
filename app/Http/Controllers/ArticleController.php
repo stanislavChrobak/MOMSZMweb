@@ -7,7 +7,7 @@ use App\Models\Article;
 
 class ArticleController extends Controller
 {
-    public function GetLastFiveArticlesAbbreviate(){
+    public function GetLastFiveArticles(){
         $numberOfRecords = Article::count();
         $lastRecordId = Article::latest()->value('id');
         if($numberOfRecords > 5){
@@ -16,8 +16,8 @@ class ArticleController extends Controller
             $articles = Article::all();
         }
 
-        
-        
-        return view('index')->with('articles', $articles);
+        $view = view('index');        
+        $view ->with('articlesCount', count($articles))->with('articles', $articles);
+        return $view;
     }
 }
