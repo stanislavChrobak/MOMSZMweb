@@ -20,3 +20,4 @@ Route::get('/login', function () {
 });
 
 Route::post('/submit-login-form', [\App\Http\Controllers\AdministratorController::class, 'UserLogin']);
+Route::get('/GUI-index', [\App\Http\Controllers\GUIController::class, 'GetIndex']);

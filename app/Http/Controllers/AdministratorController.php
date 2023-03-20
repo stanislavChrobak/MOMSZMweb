@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Models\Administrator;
 use Illuminate\routing\Controller;
 
+
 class AdministratorController extends Controller
 {
     public function UserLogin(Request $request){
@@ -30,7 +31,12 @@ class AdministratorController extends Controller
         $isCorrectPassword = $existUserName? Administrator::where('name', $name)->where('password', $password)->exists() : false;
 
         if( $existUserName && $isCorrectPassword ){
-            return $this->call(\App\Http\Controllers\ArticleController::class , '@getLastFiveArticles');
+
+            $cookieDurationInMin = 60;
+            $responseCookie = new Response('UserLogin');
+            $responseCookie->withCookie(cookie('isLogggedIn', 'true', $cookieDurationInMin));
+
+            return redirect()->action('App\Http\Controllers\GUIController@GetIndex');
         }else{
             return redirect('/login')->withErrors("Bad parameters")->withInput();
         }
