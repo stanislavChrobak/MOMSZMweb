@@ -19,5 +19,9 @@ Route::get('/login', function () {
     return view('login');
 });
 
+Route::get('/logged-out', function () {
+    return view('/GUI/loggedOut');
+});
+
 Route::post('/submit-login-form', [\App\Http\Controllers\AdministratorController::class, 'UserLogin']);
 Route::get('/GUI-index', [\App\Http\Controllers\GUIController::class, 'GetIndex']);

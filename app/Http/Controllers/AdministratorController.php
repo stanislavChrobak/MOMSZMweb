@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Validator;
 use App\Models\Administrator;
 use Illuminate\routing\Controller;
 
+use Illuminate\Http\Response;
+
 
 class AdministratorController extends Controller
 {
