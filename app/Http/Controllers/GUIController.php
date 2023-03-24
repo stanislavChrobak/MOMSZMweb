@@ -9,8 +9,14 @@ class GUIController extends Controller
 {
     
     
-    public function GetIndex(){
+    public function GetIndex(Request $request){
+        $isLoggedInUser = session('isLogggedIn');
 
-        return view('GUI/index');
+        if( $isLoggedInUser == "true" ){
+            return view('GUI/index');
+        }
+
+        return view('GUI/loggedOut');
+        
     }
 }

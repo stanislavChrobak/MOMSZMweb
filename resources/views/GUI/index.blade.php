@@ -14,6 +14,9 @@
     </head>
     <body>
     <div class="container">
+        <nav class="nav justify-content-end">
+            <a class="nav-link active" href="{{ asset('logout') }}">Odhlásiť</a>
+        </nav>
         <h1 class="text-center"> MO MS ZM GUI </h1>
     </div>
 

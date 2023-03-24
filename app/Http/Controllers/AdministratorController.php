@@ -34,14 +34,17 @@ class AdministratorController extends Controller
 
         if( $existUserName && $isCorrectPassword ){
 
-            $cookieDurationInMin = 60;
-            $responseCookie = new Response('UserLogin');
-            $responseCookie->withCookie(cookie('isLogggedIn', 'true', $cookieDurationInMin));
+            session(['isLogggedIn' => 'true']);
 
             return redirect()->action('App\Http\Controllers\GUIController@GetIndex');
         }else{
             return redirect('/login')->withErrors("Bad parameters")->withInput();
         }
 
+    }
+
+    public function UserLogout(Request $request){
+        session()->forget('isLogggedIn');
+        return view('GUI/loggedOut');
     }
 }
