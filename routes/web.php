@@ -25,6 +25,7 @@ Route::get('/logged-out', function () {
 Route::get('/add-article', [\App\Http\Controllers\ArticleController::class, 'AddArticle']);
 Route::post('/submit-add-article', [\App\Http\Controllers\ArticleController::class, 'SubmitAddArticle']);
 Route::put('/edit-article/{id}', [App\Http\Controllers\ArticleController::class, 'EditArticle'])->name('edit-article');
+Route::put('/submit-edit-article/{id}', [\App\Http\Controllers\ArticleController::class, 'SubmitEditArticle']);
 Route::delete('/delete-article/{id}', [App\Http\Controllers\ArticleController::class, 'DeleteArticle'])->name('delete-article');
 
 
