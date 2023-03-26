@@ -22,6 +22,12 @@ Route::get('/login', function () {
 Route::get('/logged-out', function () {
     return view('/GUI/loggedOut');
 });
+Route::get('/add-article', [\App\Http\Controllers\ArticleController::class, 'AddArticle']);
+Route::post('/submit-add-article', [\App\Http\Controllers\ArticleController::class, 'SubmitAddArticle']);
+Route::put('/edit-article/{id}', [App\Http\Controllers\ArticleController::class, 'EditArticle'])->name('edit-article');
+Route::delete('/delete-article/{id}', [App\Http\Controllers\ArticleController::class, 'DeleteArticle'])->name('delete-article');
+
+
 
 Route::post('/submit-login-form', [\App\Http\Controllers\AdministratorController::class, 'UserLogin']);
 Route::get('/logout', [\App\Http\Controllers\AdministratorController::class, 'UserLogout']);

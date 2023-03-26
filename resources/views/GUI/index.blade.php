@@ -19,7 +19,7 @@
         </nav>
         <h1 class="text-center"> MO MS ZM GUI </h1>
         <div class="container-fluid py-2 text-center mb-5" style="background-color: #FFF2CC;">
-            <a href="" class="btn btn-success" role="button">Vytvoriť nový článok</a>
+            <a href="{{ asset('add-article') }}" class="btn btn-success" role="button">Vytvoriť nový článok</a>
         </div>
 
         <div class="container-fluid py-2">
@@ -31,6 +31,8 @@
                     <th scope="col">Meno</th>
                     <th scope="col">Obsah</th>
                     <th scope="col">Dátum a čas vytvorenia</th>
+                    <th scope="col">Upraviť</th>
+                    <th scope="col">Zmazať</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -41,6 +43,22 @@
                             <td>{{Str::limit($articles[$i]['name'], 30, '...')}}</td>
                             <td>{{Str::limit($articles[$i]['text'], 30, '...')}}</td>
                             <td>{{$articles[$i]['created_at']}}</td>
+                            <td>
+                                <form action="{{ route('edit-article', ['id' => $articles[$i]['id']]) }}" method="POST">
+                                    @csrf
+                                    @method('PUT')
+                                    <input type="hidden" name="article_id" value="{{ $articles[$i]['id'] }}">
+                                    <button type="submit">Editovať</button>
+                                </form>
+                            </td>
+                            <td>
+                                <form action="{{ route('delete-article', ['id' => $articles[$i]['id']]) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <input type="hidden" name="article_id" value="{{ $articles[$i]['id'] }}">
+                                    <button type="submit">Zmazať</button>
+                                </form>
+                            </td>
                         </tr>
                     @endfor
                 </tbody>
