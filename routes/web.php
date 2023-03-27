@@ -19,6 +19,14 @@ Route::get('/login', function () {
     return view('login');
 });
 
+Route::get('/contact', function () {
+    return view('contact');
+});
+
+Route::get('/gallery', function () {
+    return view('gallery');
+});
+
 Route::get('/logged-out', function () {
     return view('/GUI/loggedOut');
 });

@@ -1,5 +1,5 @@
 <header>
-    <div class="container bg-light px-1">
+    <div class="container bg-light px-0">
         <!-- Top navbar --> 
         <nav class="nav justify-content-end">
             <a class="nav-link active" href="{{ asset('login') }}">Prihlásiť</a>
@@ -23,17 +23,5 @@
             </div>
         </div>
 
-        <!-- Main navbar-->
-        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #E4DCCF;">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-item nav-link active" aria-current="page" href="#">Úvod</a>
-                    <a class="nav-item nav-link" href="#">Galéria</a>
-                    <a class="nav-item nav-link" href="#">Kontakt</a>
-                </div>
-            </div>
-        </nav>
+        
 </header>
