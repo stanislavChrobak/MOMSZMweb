@@ -37,13 +37,13 @@ class ArticleController extends Controller
 
         return view('GUI/loggedOut');       
     }
-    public function EditArticle(Request $request){
+    public function EditArticle(Request $request, $id){
         
         $isLoggedInUser = session('isLogggedIn');
 
         if( $isLoggedInUser == "true" ){
         
-            $article = Article::find($request->input('article_id'));
+            $article = Article::find($id);
             
             if( $article ){
                 $view = view('GUI/edit-article');
@@ -65,9 +65,9 @@ class ArticleController extends Controller
         return view('GUI/loggedOut');       
     }
 
-    public function SubmitEditArticle(Request $request){
+    public function SubmitEditArticle(Request $request, $id, $imgPath){
         $isLoggedInUser = session('isLogggedIn');
-
+        
         if( $isLoggedInUser == "true" ){
             $validator = Validator::make($request->all(), [
                 'name' => 'required|min:3',
@@ -76,26 +76,34 @@ class ArticleController extends Controller
             ]);
         
             if ($validator->fails()) {
-                return redirect('/edit-article/32')
+                return redirect('/edit-article/'.$id)
                     ->withErrors($validator)
                     ->withInput();
             }
             
-            /*$name = $request->input('name');
+            $name = $request->input('name');
             $text = $request->input('text');
-            $imagePath = $request->file('image')->store('public/images');
-            $imagePath = Str::replace('public', 'storage', $imagePath);
 
-
-            $post = new Article();
-            $post->name = $name;
-            $post->text = $text;
-            $post->imgPath = $imagePath;
-            $post->save();
+            $articleInDB = Article::find($id);
+            if($articleInDB){
+                if( $request->hasFile('image') ){
+                    
+                    $imagePath = $request->file('image')->store('public/images');
+                    $imagePath = Str::replace('public', 'storage', $imagePath);
+                    $articleInDB->imgPath = $imagePath;
+                    $imgPath = 'public/images/'.$imgPath;
+                    Storage::delete($imgPath);
+                }
+            }
+            
+            $articleInDB->name = $name;
+            $articleInDB->text = $text;
+            
+            $articleInDB->save();
 
 
             $articles = Article::all();
-            return view('GUI/index')->with('articlesCount', count($articles))->with('articles', $articles);*/
+            return view('GUI/index')->with('articlesCount', count($articles))->with('articles', $articles);
 
         }
 

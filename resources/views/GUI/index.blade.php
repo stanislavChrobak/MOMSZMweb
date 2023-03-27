@@ -44,12 +44,7 @@
                             <td>{{Str::limit($articles[$i]['text'], 30, '...')}}</td>
                             <td>{{$articles[$i]['created_at']}}</td>
                             <td>
-                                <form action="{{ route('edit-article', ['id' => $articles[$i]['id']]) }}" method="POST">
-                                    @csrf
-                                    @method('PUT')
-                                    <input type="hidden" name="article_id" value="{{ $articles[$i]['id'] }}">
-                                    <button type="submit">Editovať</button>
-                                </form>
+                                <a href="{{ route('edit-article', ['id' => $articles[$i]['id']]) }}" style="color: white;">Upraviť</a>
                             </td>
                             <td>
                                 <form action="{{ route('delete-article', ['id' => $articles[$i]['id']]) }}" method="POST">

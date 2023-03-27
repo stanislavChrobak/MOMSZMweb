@@ -21,7 +21,11 @@
     </div>
     <div class="container d-flex justify-content-center" style="max-width: 500px;">
         <!--{!! Form::open(['url' => '/submit-edit-article', 'enctype' => 'multipart/form-data']) !!}-->
-        {!! Form::open(['url' => '/submit-edit-article/' . $article['id'] , 'method' => 'PUT', 'enctype' => 'multipart/form-data']) !!}    
+        @php
+            $imagePath = Str::remove('storage/images/', $article['imgPath']);
+        @endphp
+
+        {!! Form::open(['url' => '/submit-edit-article/' . $article['id'] .'/'.$imagePath , 'method' => 'PUT', 'enctype' => 'multipart/form-data']) !!}    
         {!! Form::hidden('_method', 'PUT') !!}
 
             <div class="form-group">
