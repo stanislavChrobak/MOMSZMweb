@@ -45,6 +45,7 @@
                         <h2>{{Str::limit($articles[$i]['name'], 30, '...')}}</h2>
                         <p class="text-justify">{{Str::limit($articles[$i]['text'], 300, '...')}}</p>
                         <p>{{$articles[$i]['created_at']}}</p>
+                        <a href="{{ route('view-article', ['id' => $articles[$i]['id']]) }}" style="color: blue;">Čítať viac...</a>
                     </div>
                 </div>
             </article>

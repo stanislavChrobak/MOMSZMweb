@@ -32,6 +32,7 @@ Route::get('/logged-out', function () {
 });
 
 Route::get('/get-articles-of-page/{id}', [App\Http\Controllers\ArticleController::class, 'GetArticlesOfPage'])->name('get-articles-of-page');
+Route::get('/view-article/{id}', [App\Http\Controllers\ArticleController::class, 'ViewArticle'])->name('view-article');
 
 Route::get('/add-article', [\App\Http\Controllers\ArticleController::class, 'AddArticle']);
 Route::post('/submit-add-article', [\App\Http\Controllers\ArticleController::class, 'SubmitAddArticle']);

@@ -13,7 +13,10 @@ use Illuminate\Support\Facades\Storage;
 class ArticleController extends Controller
 {
     
-    
+    public function ViewArticle( $id ){
+        $article = Article::find($id);
+        return view('viewArticle')->with('article', $article );
+    }
 
     public function GetLastFiveArticles(){
         $articlesOnOnePage = 5;
