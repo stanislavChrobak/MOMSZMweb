@@ -15,13 +15,19 @@
             <header>
                 <h1 class="display-1 text-center py-5">{{$article['name']}}</h1>
             </header>
-            <div>
+            <div class="container-fluid text-center" style = "max-width: 700px">
                 <p>{{$article['text']}}</p>
             </div>
-            <div class"d-flex align-items-center">
-                <img class="img-fluid mx-auto" src="{{ asset($article['imgPath']) }}" style="height: 250px;">
+            <div class="container-fluid d-flex align-items-center">
+                <img class="img-fluid mx-auto mb-5" src="{{ asset($article['imgPath']) }}" style="height: 250px;">
             </div>
+            
+            <div class="container-fluid py-2 text-center mb-5" style="background-color: #FFF2CC;">
+            <a href="{{ asset('/') }}" class="btn btn-success" role="button">Naspäť</a>
         </div>
+        </div>
+    <!-- Footer -->  
+    @include('footer')
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     </body>
 </html>
