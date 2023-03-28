@@ -51,6 +51,18 @@
         @endfor
     </div>
 
+    <div class="container py-3 mb-3 text-center" style="background-color: #E4DCCF;">
+            <span>Stránka: </span>
+        @for($i = 1; $i <=  $pagesCount  ; $i++ )
+            @if( $actualPage == $i )
+                <a href="{{ route('get-articles-of-page', ['id' => $i]) }}" style="color: red;">{{ $i }}</a>
+            @else
+                <a href="{{ route('get-articles-of-page', ['id' => $i]) }}" style="color: black;">{{ $i }}</a>
+            @endif
+            
+        @endfor
+    </div>
+
     <!-- Footer -->  
     @include('footer')
 

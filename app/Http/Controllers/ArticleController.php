@@ -12,17 +12,55 @@ use Illuminate\Support\Facades\Storage;
 
 class ArticleController extends Controller
 {
+    
+    
+
     public function GetLastFiveArticles(){
+        $articlesOnOnePage = 5;
         $numberOfRecords = Article::count();
         $lastRecordId = Article::latest()->value('id');
-        if($numberOfRecords > 5){
-            $articles = Article::latest('created_at')->take(5)->get();
+        if($numberOfRecords > $articlesOnOnePage){
+            $articles = Article::latest('created_at')->take($articlesOnOnePage)->get();
         }else{
             $articles = Article::all();
         }
 
+        $numberOfPages = $numberOfRecords / $articlesOnOnePage;
+        if($numberOfRecords % $articlesOnOnePage){
+            $numberOfPages++;
+        }
+
+        $actualPage = 1;
+
         $view = view('index');        
-        $view ->with('articlesCount', count($articles))->with('articles', $articles);
+        $view ->with('articlesCount', count($articles))->with('articles', $articles)->with('pagesCount', $numberOfPages)
+        ->with('actualPage', $actualPage);
+        return $view;
+    }
+
+    public function GetArticlesOfPage( $id ){
+        $articlesOnOnePage = 5;
+        $numberOfRecords = Article::count();
+
+        if( $id == 1 ){
+            $articleOffset = 0;
+        }else{
+            $articleOffset = ($id - 1) * $articlesOnOnePage;
+        }
+            
+
+        $articles = Article::latest('created_at')->offset($articleOffset)->limit($articlesOnOnePage)->get();
+
+        $numberOfPages = $numberOfRecords / $articlesOnOnePage;
+        if($numberOfRecords % $articlesOnOnePage){
+            $numberOfPages++;
+        }
+
+        $actualPage = $id;
+
+        $view = view('index');        
+        $view ->with('articlesCount', count($articles))->with('articles', $articles)->with('pagesCount', $numberOfPages)
+        ->with('actualPage', $actualPage);
         return $view;
     }
 
