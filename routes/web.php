@@ -46,4 +46,4 @@ Route::delete('/delete-article/{id}', [App\Http\Controllers\ArticleController::c
 
 Route::post('/submit-login-form', [\App\Http\Controllers\AdministratorController::class, 'UserLogin']);
 Route::get('/logout', [\App\Http\Controllers\AdministratorController::class, 'UserLogout']);
-Route::get('/GUI-index', [\App\Http\Controllers\GUIController::class, 'GetIndex']);
+Route::get('/GUI-index/{id}', [\App\Http\Controllers\GUIController::class, 'GetIndex'])->name('GUI-index');

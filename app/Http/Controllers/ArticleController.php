@@ -45,12 +45,12 @@ class ArticleController extends Controller
         $articlesOnOnePage = 5;
         $numberOfRecords = Article::count();
 
-        $numberOfPages = $numberOfRecords / $articlesOnOnePage;
+        $numberOfPages = intval( $numberOfRecords / $articlesOnOnePage );
         if($numberOfRecords % $articlesOnOnePage){
             $numberOfPages++;
         }
 
-        if( $id > $numberOfPages ) $id = $numberOfPages;
+        if( $id > $numberOfPages ){ $id = $numberOfPages;}
 
         if( $id <= 1 ){
             $articleOffset = 0;
