@@ -45,21 +45,27 @@ class ArticleController extends Controller
         $articlesOnOnePage = 5;
         $numberOfRecords = Article::count();
 
-        if( $id == 1 ){
-            $articleOffset = 0;
-        }else{
-            $articleOffset = ($id - 1) * $articlesOnOnePage;
-        }
-            
-
-        $articles = Article::latest('created_at')->offset($articleOffset)->limit($articlesOnOnePage)->get();
-
         $numberOfPages = $numberOfRecords / $articlesOnOnePage;
         if($numberOfRecords % $articlesOnOnePage){
             $numberOfPages++;
         }
 
-        $actualPage = $id;
+        if( $id > $numberOfPages ) $id = $numberOfPages;
+
+        if( $id <= 1 ){
+            $articleOffset = 0;
+            $actualPage = 1;
+        }else{
+            $articleOffset = ($id - 1) * $articlesOnOnePage;
+            $actualPage = $id;
+        }
+            
+
+        $articles = Article::latest('created_at')->offset($articleOffset)->limit($articlesOnOnePage)->get();
+
+        
+
+        
 
         $view = view('index');        
         $view ->with('articlesCount', count($articles))->with('articles', $articles)->with('pagesCount', $numberOfPages)

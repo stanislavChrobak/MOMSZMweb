@@ -9,6 +9,7 @@ use App\Models\Administrator;
 use Illuminate\routing\Controller;
 
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Hash;
 
 
 class AdministratorController extends Controller
@@ -30,8 +31,14 @@ class AdministratorController extends Controller
         $password = $request->input('password');
 
         $existUserName = Administrator::where('name', $name)->exists();
-        $isCorrectPassword = $existUserName? Administrator::where('name', $name)->where('password', $password)->exists() : false;
+        if($existUserName){
+            $userDbPassword = Administrator::where('name', $name)->value('password');
+            $isCorrectPassword =  Hash::check( $password , $userDbPassword);
 
+        }else{
+            $isCorrectPassword = false;
+        }
+        
         if( $existUserName && $isCorrectPassword ){
 
             session(['isLogggedIn' => 'true']);

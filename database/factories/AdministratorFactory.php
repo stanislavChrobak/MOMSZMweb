@@ -18,7 +18,7 @@ class AdministratorFactory extends Factory
     {
         return [
             'name' => 'Peter',
-            'password' => '123',
+            'password' => '$2y$10$PLOwc6Mvf4tOxu3i.T/s2em22mw9nvc9t5h5JH7/7kZwOgrZGQt7G',
         ];
     }
 }
