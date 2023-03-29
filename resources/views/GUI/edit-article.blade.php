@@ -15,7 +15,7 @@
     <body>
     <div class="container">
         <nav class="nav justify-content-end">
-            <a class="nav-link active" href="{{ asset('GUI-index') }}">Späť</a>
+            <a class="nav-link active" href="{{ asset('GUI-index/articles') }}">Späť</a>
         </nav>
         <h1 class="text-center"> Upraviť článok </h1>
     </div>

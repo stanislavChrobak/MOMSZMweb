@@ -43,7 +43,7 @@ class AdministratorController extends Controller
 
             session(['isLogggedIn' => 'true']);
 
-            return redirect()->action('App\Http\Controllers\GUIController@GetIndex');
+            return redirect()->route('GUI-index', ['id' => 'articles']);
         }else{
             return redirect('/login')->withErrors("Bad parameters")->withInput();
         }

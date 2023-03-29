@@ -23,7 +23,7 @@
                 <li class="nav-item">
                     @if( $activePage == 'articles' )
                         <a class="nav-link active" href="{{ route('GUI-index', ['id' => 'articles']) }}">Články</a>
-                    @else
+                    @elseif( $activePage == 'gallery' )
                         <a class="nav-link" href="{{ route('GUI-index', ['id' => 'articles']) }}">Články</a>
                     @endif
                     
@@ -31,7 +31,7 @@
                 <li class="nav-item">
                     @if( $activePage == 'articles' )
                         <a class="nav-link" href="{{ route('GUI-index', ['id' => 'gallery']) }}">Galéria</a>
-                    @else
+                    @elseif( $activePage == 'gallery' )
                         <a class="nav-link active" href="{{ route('GUI-index', ['id' => 'gallery']) }}">Galéria</a>
                     @endif
                 </li>
@@ -76,6 +76,28 @@
                                 </td>
                             </tr>
                         @endfor
+                    </tbody>
+                </table>
+            </div> 
+        @elseif( $activePage == 'gallery' )
+            <div class="container-fluid py-2 text-center mb-5" style="background-color: #FFF2CC;">
+                <a href="{{ asset('add-gallery') }}" class="btn btn-success" role="button">Vytvoriť novú galériu</a>
+            </div>
+
+            <div class="container-fluid py-2">
+                <table class="table table-striped table-dark">
+                    <thead>
+                        <tr>
+                        <th scope="col">Riadok</th>    
+                        <th scope="col">ID</th>
+                        <th scope="col">Meno</th>
+                        <th scope="col">Dátum a čas vytvorenia</th>
+                        <th scope="col">Upraviť</th>
+                        <th scope="col">Zmazať</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
                     </tbody>
                 </table>
             </div> 

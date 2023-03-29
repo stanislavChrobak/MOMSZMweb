@@ -30,7 +30,12 @@
         </nav>
     <!-- Content -->  
     <div class="container bg-light px-1">   
-        
+        <div class="row">
+            <div class="col"><a href="{{ asset('images/2.jpg') }}"><img class="img-fluid mx-auto mb-5" src="{{ asset('images/2.jpg') }}" style="height: 200px;"></a></div>
+            <div class="col"><img class="img-fluid mx-auto mb-5" src="{{ asset('images/2.jpg') }}" style="height: 200px;"></div>
+            <div class="col"><img class="img-fluid mx-auto mb-5" src="{{ asset('images/2.jpg') }}" style="height: 200px;"></div>
+            <div class="col"><img class="img-fluid mx-auto mb-5" src="{{ asset('images/2.jpg') }}" style="height: 200px;"></div>
+        </div>
     </div>
 
     <!-- Footer -->  
