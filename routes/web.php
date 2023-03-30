@@ -43,6 +43,7 @@ Route::put('/submit-edit-article/{id}/{imgPath}', [\App\Http\Controllers\Article
 Route::delete('/delete-article/{id}', [App\Http\Controllers\ArticleController::class, 'DeleteArticle'])->name('delete-article');
 
 Route::get('/add-gallery', [\App\Http\Controllers\GalleryController::class, 'AddGallery']);
+Route::post('/submit-add-gallery', [\App\Http\Controllers\GalleryController::class, 'SubmitAddGallery']);
 
 
 
