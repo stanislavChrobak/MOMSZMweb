@@ -56,21 +56,21 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @for($i = 0; $i <  $articlesCount  ; $i++ )
+                        @for($i = 0; $i <  $postsCount  ; $i++ )
                             <tr>
                                 <th scope="row"> {{$i+1}} </th>
-                                <td>{{$articles[$i]['id']}}</td>
-                                <td>{{Str::limit($articles[$i]['name'], 30, '...')}}</td>
-                                <td>{{Str::limit($articles[$i]['text'], 30, '...')}}</td>
-                                <td>{{$articles[$i]['created_at']}}</td>
+                                <td>{{$posts[$i]['id']}}</td>
+                                <td>{{Str::limit($posts[$i]['name'], 30, '...')}}</td>
+                                <td>{{Str::limit($posts[$i]['text'], 30, '...')}}</td>
+                                <td>{{$posts[$i]['created_at']}}</td>
                                 <td>
-                                    <a href="{{ route('edit-article', ['id' => $articles[$i]['id']]) }}" style="color: white;">Upraviť</a>
+                                    <a href="{{ route('edit-article', ['id' => $posts[$i]['id']]) }}" style="color: white;">Upraviť</a>
                                 </td>
                                 <td>
-                                    <form action="{{ route('delete-article', ['id' => $articles[$i]['id']]) }}" method="POST">
+                                    <form action="{{ route('delete-article', ['id' => $posts[$i]['id']]) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <input type="hidden" name="article_id" value="{{ $articles[$i]['id'] }}">
+                                        <input type="hidden" name="article_id" value="{{ $posts[$i]['id'] }}">
                                         <button type="submit">Zmazať</button>
                                     </form>
                                 </td>
@@ -97,7 +97,25 @@
                         </tr>
                     </thead>
                     <tbody>
-                        
+                        @for($i = 0; $i <  $postsCount  ; $i++ )
+                            <tr>
+                                <th scope="row"> {{$i+1}} </th>
+                                <td>{{$posts[$i]['id']}}</td>
+                                <td>{{Str::limit($posts[$i]['name'], 30, '...')}}</td>
+                                <td>{{$posts[$i]['created_at']}}</td>
+                                <td>
+                                    <a href="{{ route('edit-gallery', ['id' => $posts[$i]['id']]) }}" style="color: white;">Upraviť</a>
+                                </td>
+                                <td>
+                                    <form action="{{ route('delete-gallery', ['id' => $posts[$i]['id']]) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <input type="hidden" name="post_id" value="{{ $posts[$i]['id'] }}">
+                                        <button type="submit">Zmazať</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        @endfor
                     </tbody>
                 </table>
             </div> 

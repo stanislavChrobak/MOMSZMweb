@@ -76,8 +76,7 @@ class GalleryController extends Controller
             
 
 
-            $galleryPosts = Gallery::all();
-            return view('GUI/index')->with('gallerypostsCount', count($galleryPosts))->with('galleryPosts', $galleryPosts);
+            return redirect('/GUI-index/gallery');
 
         }
 

@@ -149,8 +149,7 @@ class ArticleController extends Controller
             $articleInDB->save();
 
 
-            $articles = Article::all();
-            return view('GUI/index')->with('articlesCount', count($articles))->with('articles', $articles);
+            return redirect('/GUI-index/articles');
 
         }
 
@@ -177,7 +176,7 @@ class ArticleController extends Controller
                 $article->delete();
             }
             
-            return redirect()->action('App\Http\Controllers\GUIController@GetIndex');
+            return redirect('/GUI-index/articles');
         }
 
         return view('GUI/loggedOut');       
@@ -212,8 +211,7 @@ class ArticleController extends Controller
             $post->save();
 
 
-            $articles = Article::all();
-            return view('GUI/index')->with('articlesCount', count($articles))->with('articles', $articles);
+            return redirect('/GUI-index/articles');
 
         }
 

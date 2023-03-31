@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Models\Article;
+use App\Models\Gallery;
 
 class GUIController extends Controller
 {
@@ -15,13 +16,15 @@ class GUIController extends Controller
 
         if( $isLoggedInUser == "true" ){
 
-            $articles = Article::all();
+            if($page == 'articles'){ $posts = Article::all();}
+            else if( $page == 'gallery'){ $posts = Gallery::all();}
+            else { $posts = null;}
 
-            $activePage = $page;
+            
             
 
-            return view('GUI/index')->with('articlesCount', count($articles))->with('articles', $articles)
-            ->with('activePage', $activePage);
+            return view('GUI/index')->with('postsCount', count($posts))->with('posts', $posts)
+            ->with('activePage', $page);
         }
 
         return view('GUI/loggedOut');
