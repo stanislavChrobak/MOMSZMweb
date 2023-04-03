@@ -221,14 +221,14 @@ class GalleryController extends Controller
             }
             
             $name = $request->input('name');
-            $storedImgPath1 = $request->input('storedImage1');
-            $storedImgPath2 = $request->input('storedImage2');
-            $storedImgPath3 = $request->input('storedImage3');
-            $storedImgPath4 = $request->input('storedImage4');
-            $storedImgPath5 = $request->input('storedImage5');
-            $storedImgPath6 = $request->input('storedImage6');
-            $storedImgPath7 = $request->input('storedImage7');
-            $storedImgPath8 = $request->input('storedImage8');
+            $storedImgPath1 = $request->input('storedImage1') == null? 'none': $request->input('storedImage1');
+            $storedImgPath2 = $request->input('storedImage2') == null? 'none': $request->input('storedImage2');
+            $storedImgPath3 = $request->input('storedImage3') == null? 'none': $request->input('storedImage3');
+            $storedImgPath4 = $request->input('storedImage4') == null? 'none': $request->input('storedImage4');
+            $storedImgPath5 = $request->input('storedImage5') == null? 'none': $request->input('storedImage5');
+            $storedImgPath6 = $request->input('storedImage6') == null? 'none': $request->input('storedImage6');
+            $storedImgPath7 = $request->input('storedImage7') == null? 'none': $request->input('storedImage7');
+            $storedImgPath8 = $request->input('storedImage8') == null? 'none': $request->input('storedImage8');
 
             $galleryInDB = Gallery::find($id);
             if($galleryInDB){
@@ -289,5 +289,28 @@ class GalleryController extends Controller
         }
 
         return view('GUI/loggedOut');  
+    }
+
+    public function GetLastFiveGalleries(){
+        $articlesOnOnePage = 5;
+        $numberOfRecords = Gallery::count();
+        $lastRecordId = Gallery::latest()->value('id');
+        if($numberOfRecords > $articlesOnOnePage){
+            $gallery = Gallery::latest('created_at')->take($articlesOnOnePage)->get();
+        }else{
+            $gallery = Gallery::all();
+        }
+
+        $numberOfPages = $numberOfRecords / $articlesOnOnePage;
+        if($numberOfRecords % $articlesOnOnePage){
+            $numberOfPages++;
+        }
+
+        $actualPage = 1;
+
+        $view = view('gallery');        
+        $view ->with('galleriesCount', count($gallery))->with('galleries', $gallery)->with('pagesCount', $numberOfPages)
+        ->with('actualPage', $actualPage);
+        return $view;
     }
 }

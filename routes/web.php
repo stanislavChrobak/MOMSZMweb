@@ -23,9 +23,8 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/gallery', function () {
-    return view('gallery');
-});
+
+Route::get('/gallery', [\App\Http\Controllers\GalleryController::class, 'GetLastFiveGalleries']);
 
 Route::get('/logged-out', function () {
     return view('/GUI/loggedOut');

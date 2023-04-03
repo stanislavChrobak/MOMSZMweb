@@ -29,13 +29,40 @@
             </div>
         </nav>
     <!-- Content -->  
-    <div class="container bg-light px-1">   
-        <div class="row">
-            <div class="col"><a href="{{ asset('images/2.jpg') }}"><img class="img-fluid mx-auto mb-5" src="{{ asset('images/2.jpg') }}" style="height: 200px;"></a></div>
-            <div class="col"><img class="img-fluid mx-auto mb-5" src="{{ asset('images/2.jpg') }}" style="height: 200px;"></div>
-            <div class="col"><img class="img-fluid mx-auto mb-5" src="{{ asset('images/2.jpg') }}" style="height: 200px;"></div>
-            <div class="col"><img class="img-fluid mx-auto mb-5" src="{{ asset('images/2.jpg') }}" style="height: 200px;"></div>
+    <div class="container bg-light px-0 mb-3"> 
+        @for($i = 0; $i <  $galleriesCount  ; $i++ ) 
+        <div class="container-fluid my-3" style="background-color: #E4DCCF;" >
+            <header class="container-fluid mb-3">
+                    <h1 class="display-4 text-center py-1">{{Str::limit($galleries[$i]['name'], 30, '...')}}</h1>
+            </header> 
+            <div class="container-fluid d-flex justify-content-center">
+                @if( $galleries[$i]['imgPath1'] != 'none' )
+                    <div class="mx-2"><img class="img-fluid mx-auto mb-5" src="{{ asset($galleries[$i]['imgPath1']) }}" style="height: 200px; min-width: 250px;"></div>
+                @endif
+                @if( $galleries[$i]['imgPath2'] != 'none' )
+                    <div class="mx-2"><img class="img-fluid mx-auto mb-5" src="{{ asset($galleries[$i]['imgPath2']) }}" style="height: 200px; min-width: 250px;"></div>
+                @endif
+                @if( $galleries[$i]['imgPath3'] != 'none' )
+                    <div class="mx-2"><img class="img-fluid mx-auto mb-5" src="{{ asset($galleries[$i]['imgPath3']) }}" style="height: 200px; min-width: 250px;"></div>
+                @endif
+                @if( $galleries[$i]['imgPath4'] != 'none' )
+                    <div class="mx-2"><img class="img-fluid mx-auto mb-5" src="{{ asset($galleries[$i]['imgPath4']) }}" style="height: 200px; min-width: 250px;"></div>
+                @endif
+                @if( $galleries[$i]['imgPath5'] != 'none' )
+                    <div class="mx-2"><img class="img-fluid mx-auto mb-5" src="{{ asset($galleries[$i]['imgPath5']) }}" style="height: 200px; min-width: 250px;"></div>
+                @endif
+                @if( $galleries[$i]['imgPath6'] != 'none' )
+                    <div class="mx-2"><img class="img-fluid mx-auto mb-5" src="{{ asset($galleries[$i]['imgPath6']) }}" style="height: 200px; min-width: 250px;"></div>
+                @endif
+                @if( $galleries[$i]['imgPath7'] != 'none' )
+                    <div class="mx-2"><img class="img-fluid mx-auto mb-5" src="{{ asset($galleries[$i]['imgPath7']) }}" style="height: 200px; min-width: 250px;"></div>
+                @endif
+                @if( $galleries[$i]['imgPath8'] != 'none' )
+                    <div class="mx-2"><img class="img-fluid mx-auto mb-5" src="{{ asset($galleries[$i]['imgPath8']) }}" style="height: 200px; min-width: 250px;"></div>
+                @endif
+            </div>
         </div>
+        @endfor
     </div>
 
     <!-- Footer -->  
