@@ -13,6 +13,8 @@
         
     </head>
     <body>
+    <!-- Cookie -->            
+    @include('cookieAlert')
     <!-- Header -->            
     @include('header')
     <!-- Main navbar-->
@@ -33,35 +35,47 @@
         @for($i = 0; $i <  $galleriesCount  ; $i++ ) 
         <div class="container-fluid my-3" style="background-color: #E4DCCF;" >
             <header class="container-fluid mb-3">
-                    <h1 class="display-4 text-center py-1">{{Str::limit($galleries[$i]['name'], 30, '...')}}</h1>
+                    <h1 class="display-4 text-center py-3">{{Str::limit($galleries[$i]['name'], 30, '...')}}</h1>
             </header> 
-            <div class="container-fluid d-flex justify-content-center">
+            <div class="row">
                 @if( $galleries[$i]['imgPath1'] != 'none' )
-                    <div class="mx-2"><img class="img-fluid mx-auto mb-5" src="{{ asset($galleries[$i]['imgPath1']) }}" style="height: 200px; min-width: 250px;"></div>
+                    <div class="col mx-2 d-flex justify-content-center"><img class="img-fluid mx-auto mb-5 rounded img-thumbnail" src="{{ asset($galleries[$i]['imgPath1']) }}" style="height: 200px; min-width: 250px;"></div>
                 @endif
                 @if( $galleries[$i]['imgPath2'] != 'none' )
-                    <div class="mx-2"><img class="img-fluid mx-auto mb-5" src="{{ asset($galleries[$i]['imgPath2']) }}" style="height: 200px; min-width: 250px;"></div>
+                    <div class="col mx-2 d-flex justify-content-center"><img class="img-fluid mx-auto mb-5 rounded img-thumbnail" src="{{ asset($galleries[$i]['imgPath2']) }}" style="height: 200px; min-width: 250px;"></div>
                 @endif
                 @if( $galleries[$i]['imgPath3'] != 'none' )
-                    <div class="mx-2"><img class="img-fluid mx-auto mb-5" src="{{ asset($galleries[$i]['imgPath3']) }}" style="height: 200px; min-width: 250px;"></div>
+                    <div class="col mx-2 d-flex justify-content-center"><img class="img-fluid mx-auto mb-5 rounded img-thumbnail" src="{{ asset($galleries[$i]['imgPath3']) }}" style="height: 200px; min-width: 250px;"></div>
                 @endif
                 @if( $galleries[$i]['imgPath4'] != 'none' )
-                    <div class="mx-2"><img class="img-fluid mx-auto mb-5" src="{{ asset($galleries[$i]['imgPath4']) }}" style="height: 200px; min-width: 250px;"></div>
+                    <div class="col mx-2 d-flex justify-content-center"><img class="img-fluid mx-auto mb-5 rounded img-thumbnail" src="{{ asset($galleries[$i]['imgPath4']) }}" style="height: 200px; min-width: 250px;"></div>
                 @endif
                 @if( $galleries[$i]['imgPath5'] != 'none' )
-                    <div class="mx-2"><img class="img-fluid mx-auto mb-5" src="{{ asset($galleries[$i]['imgPath5']) }}" style="height: 200px; min-width: 250px;"></div>
+                    <div class="col mx-2 d-flex justify-content-center"><img class="img-fluid mx-auto mb-5 rounded img-thumbnail" src="{{ asset($galleries[$i]['imgPath5']) }}" style="height: 200px; min-width: 250px;"></div>
                 @endif
                 @if( $galleries[$i]['imgPath6'] != 'none' )
-                    <div class="mx-2"><img class="img-fluid mx-auto mb-5" src="{{ asset($galleries[$i]['imgPath6']) }}" style="height: 200px; min-width: 250px;"></div>
+                    <div class="col mx-2 d-flex justify-content-center"><img class="img-fluid mx-auto mb-5 rounded img-thumbnail" src="{{ asset($galleries[$i]['imgPath6']) }}" style="height: 200px; min-width: 250px;"></div>
                 @endif
                 @if( $galleries[$i]['imgPath7'] != 'none' )
-                    <div class="mx-2"><img class="img-fluid mx-auto mb-5" src="{{ asset($galleries[$i]['imgPath7']) }}" style="height: 200px; min-width: 250px;"></div>
+                    <div class="col mx-2 d-flex justify-content-center"><img class="img-fluid mx-auto mb-5 rounded img-thumbnail" src="{{ asset($galleries[$i]['imgPath7']) }}" style="height: 200px; min-width: 250px;"></div>
                 @endif
                 @if( $galleries[$i]['imgPath8'] != 'none' )
-                    <div class="mx-2"><img class="img-fluid mx-auto mb-5" src="{{ asset($galleries[$i]['imgPath8']) }}" style="height: 200px; min-width: 250px;"></div>
+                    <div class="col mx-2 d-flex justify-content-center"><img class="img-fluid mx-auto mb-5 rounded img-thumbnail" src="{{ asset($galleries[$i]['imgPath8']) }}" style="height: 200px; min-width: 250px;"></div>
                 @endif
             </div>
         </div>
+        @endfor
+    </div>
+
+    <div class="container py-3 mb-3 text-center" style="background-color: #E4DCCF;">
+            <span>Stránka: </span>
+        @for($i = 1; $i <=  $pagesCount  ; $i++ )
+            @if( $actualPage == $i )
+                <a href="{{ route('get-galleries-of-page', ['id' => $i]) }}" style="color: red;">{{ $i }}</a>
+            @else
+                <a href="{{ route('get-galleries-of-page', ['id' => $i]) }}" style="color: black;">{{ $i }}</a>
+            @endif
+            
         @endfor
     </div>
 

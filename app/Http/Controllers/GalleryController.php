@@ -313,4 +313,36 @@ class GalleryController extends Controller
         ->with('actualPage', $actualPage);
         return $view;
     }
+
+    public function GetGalleriesOfPage( $id ){
+        $galleriesOnOnePage = 5;
+        $numberOfRecords = Gallery::count();
+
+        $numberOfPages = intval( $numberOfRecords / $galleriesOnOnePage );
+        if($numberOfRecords % $galleriesOnOnePage){
+            $numberOfPages++;
+        }
+
+        if( $id > $numberOfPages ){ $id = $numberOfPages;}
+
+        if( $id <= 1 ){
+            $galleryOffset = 0;
+            $actualPage = 1;
+        }else{
+            $galleryOffset = ($id - 1) * $galleriesOnOnePage;
+            $actualPage = $id;
+        }
+            
+
+        $galleries = Gallery::latest('created_at')->offset($galleryOffset)->limit($galleriesOnOnePage)->get();
+
+        
+
+        
+
+        $view = view('gallery');        
+        $view ->with('galleriesCount', count($galleries))->with('galleries', $galleries)->with('pagesCount', $numberOfPages)
+        ->with('actualPage', $actualPage);
+        return $view;
+    }
 }

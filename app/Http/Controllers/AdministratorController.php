@@ -54,4 +54,10 @@ class AdministratorController extends Controller
         session()->forget('isLogggedIn');
         return view('GUI/loggedOut');
     }
+
+    public function AcceptCookie( Request $request ){
+        $calledFromUrl = $request->input('url');
+        session(['isCookieAccepted' => 'true']);
+        return redirect($calledFromUrl);
+    }
 }

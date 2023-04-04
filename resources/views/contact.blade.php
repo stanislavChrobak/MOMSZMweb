@@ -13,6 +13,8 @@
         
     </head>
     <body>
+    <!-- Cookie -->            
+    @include('cookieAlert')
     <!-- Header -->            
     @include('header')
     <!-- Main navbar-->
