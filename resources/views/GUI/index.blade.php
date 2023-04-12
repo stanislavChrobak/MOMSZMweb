@@ -122,7 +122,7 @@
             </div> 
             @elseif( $activePage == 'preparedActions' )
             <div class="container-fluid py-2 text-center mb-5" style="background-color: #FFF2CC;">
-                <a href="#" class="btn btn-success" role="button">Vytvoriť novú udalosť</a>
+                <a href="{{ asset('add-action') }}" class="btn btn-success" role="button">Vytvoriť novú udalosť</a>
             </div>
 
             <div class="container-fluid py-2">
@@ -133,6 +133,7 @@
                         <th scope="col">Kedy</th>
                         <th scope="col">Kde</th>
                         <th scope="col">Poznámka</th>
+                        <th scope="col">Viditeľný</th>
                         <th scope="col">Upraviť</th>
                         <th scope="col">Zmazať</th>
                         </tr>
@@ -143,7 +144,8 @@
                                 <th scope="row"> {{$i+1}} </th>
                                 <td>{{$posts[$i]['when']}}</td>
                                 <td>{{Str::limit($posts[$i]['where'], 30, '...')}}</td>
-                                <td>{{Str::limit($posts[$i]['note'], 50, '...')}}</td>
+                                <td>{{Str::limit($posts[$i]['note'], 30, '...')}}</td>
+                                <td>{{$posts[$i]['visible']}}</td>
                                 <td>
                                     <a href="#" style="color: white;">Upraviť</a>
                                 </td>

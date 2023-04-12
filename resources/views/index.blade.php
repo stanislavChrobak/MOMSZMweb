@@ -31,58 +31,31 @@
             </div>
         </nav>
     <!-- Content -->  
-    <div class="container px-0 py-5 px-5" style="background-color: #598392;">
-        <h1 class="display-4 text-center py-3" style="color: #01161E;">Pripravujeme</h1>
-        <table class="table table-striped ">
-                    <thead>
-                        <tr>
-                        <th scope="col"></th>  
-                        <th scope="col">Kedy</th>    
-                        <th scope="col">Kde</th>
-                        <th scope="col">Poznámka</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        
+    @if( $hasPreparingActions )
+        <div class="container px-0 py-5 px-5" style="background-color: #598392;">
+            <h1 class="display-4 text-center py-3" style="color: #01161E;">Pripravujeme</h1>
+            <table class="table table-striped ">
+                        <thead>
                             <tr>
-                                <th scope="row"> 1 </th> 
-                                <td>25.4.2023</td>
-                                <td>MSKS Zlaté Moravce</td>
-                                <td>Pozívame vás na valné zhromaždenie. Účasť je nutná.</td>
-                               
+                            <th scope="col"></th>  
+                            <th scope="col">Kedy</th>    
+                            <th scope="col">Kde</th>
+                            <th scope="col">Poznámka</th>
                             </tr>
-                            <tr>
-                                <th scope="row">2 </th>
-                                <td>25.4.2023</td>
-                                <td>MSKS Zlaté Moravce</td>
-                                <td>Pozívame vás na valné zhromaždenie. Účasť je nutná.</td>
-                               
-                            </tr>
-                            <tr>
-                                <th scope="row"> 3 </th>
-                                <td>25.4.2023</td>
-                                <td>MSKS Zlaté Moravce</td>
-                                <td>Pozívame vás na valné zhromaždenie. Účasť je nutná.</td>
-                               
-                            </tr>
-                            <tr>
-                                <th scope="row"> 4 </th>
-                                <td>25.4.2023</td>
-                                <td>MSKS Zlaté Moravce</td>
-                                <td>Pozívame vás na valné zhromaždenie. Účasť je nutná.</td>
-                               
-                            </tr>
-                            <tr>
-                                <th scope="row"> 5 </th>
-                                <td>25.4.2023</td>
-                                <td>MSKS Zlaté Moravce</td>
-                                <td>Pozívame vás na valné zhromaždenie. Účasť je nutná.</td>
-                               
-                            </tr>
-                      
-                    </tbody>
-                </table>
-    </div>
+                        </thead>
+                        <tbody>
+                            @for( $i = 0; $i < $preparingActionsCount; $i++)
+                                <tr>
+                                    <th scope="row"> {{ $i+1 }} </th> 
+                                    <td>{{ $preparingActions[$i]['when'] }}</td>
+                                    <td>{{ $preparingActions[$i]['where'] }}</td>
+                                    <td>{{Str::limit($preparingActions[$i]['note'], 60, '...')}}</td>
+                                </tr>  
+                            @endfor                     
+                        </tbody>
+                    </table>
+        </div>
+    @endif
     <div class="container px-0 py-3" style="background-color: #01161E;"> 
         <div class="container-fluid " >  
         <h1 class="display-4 text-center py-3" style="color: #E4DCCF;">Udialo sa</h1>

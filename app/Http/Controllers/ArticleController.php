@@ -7,6 +7,7 @@ use App\Models\Article;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
+use App\Models\PrepareActions;
 
 
 
@@ -33,11 +34,21 @@ class ArticleController extends Controller
             $numberOfPages++;
         }
 
+        //** preparing actions records */
+        $preparingActions = PrepareActions::all();
+        $preparingActionsRes = [];
+        foreach( $preparingActions as $preparedAction){
+            if( $preparedAction['visible'] == true ){
+                array_push( $preparingActionsRes, $preparedAction);
+            }
+        }
+
+
         $actualPage = 1;
 
         $view = view('index');        
         $view ->with('articlesCount', count($articles))->with('articles', $articles)->with('pagesCount', $numberOfPages)
-        ->with('actualPage', $actualPage);
+        ->with('actualPage', $actualPage)->with('hasPreparingActions', true)->with('preparingActions', $preparingActionsRes)->with('preparingActionsCount', count($preparingActionsRes));
         return $view;
     }
 
@@ -69,7 +80,7 @@ class ArticleController extends Controller
 
         $view = view('index');        
         $view ->with('articlesCount', count($articles))->with('articles', $articles)->with('pagesCount', $numberOfPages)
-        ->with('actualPage', $actualPage);
+        ->with('actualPage', $actualPage)->with('hasPreparingActions', false);
         return $view;
     }
 
