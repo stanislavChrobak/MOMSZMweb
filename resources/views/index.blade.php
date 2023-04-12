@@ -31,40 +31,97 @@
             </div>
         </nav>
     <!-- Content -->  
-    <div class="container bg-light px-0">   
-        @php
-            use Illuminate\Support\Str;
-        @endphp
-
-        @for($i = 0; $i <  $articlesCount  ; $i++ )
-
-            <article class="container-fluid my-3 py-2" style="background-color: #E4DCCF;">
-                <div class="row">
-                    <div class="col-sm-4  text-center d-flex align-items-center">
-                        <img class="img-fluid mx-auto" src="{{ asset($articles[$i]['imgPath']) }}" style="height: 250px;">
-                    </div>
-                    <div class="col-sm-8">
-                        <h2>{{Str::limit($articles[$i]['name'], 30, '...')}}</h2>
-                        <p class="text-justify">{{Str::limit($articles[$i]['text'], 300, '...')}}</p>
-                        <p>{{$articles[$i]['created_at']}}</p>
-                        <a href="{{ route('view-article', ['id' => $articles[$i]['id']]) }}" style="color: blue;">Čítať viac...</a>
-                    </div>
-                </div>
-            </article>
-        @endfor
+    <div class="container px-0 py-5 px-5" style="background-color: #598392;">
+        <h1 class="display-4 text-center py-3" style="color: #01161E;">Pripravujeme</h1>
+        <table class="table table-striped ">
+                    <thead>
+                        <tr>
+                        <th scope="col"></th>  
+                        <th scope="col">Kedy</th>    
+                        <th scope="col">Kde</th>
+                        <th scope="col">Poznámka</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                            <tr>
+                                <th scope="row"> 1 </th> 
+                                <td>25.4.2023</td>
+                                <td>MSKS Zlaté Moravce</td>
+                                <td>Pozívame vás na valné zhromaždenie. Účasť je nutná.</td>
+                               
+                            </tr>
+                            <tr>
+                                <th scope="row">2 </th>
+                                <td>25.4.2023</td>
+                                <td>MSKS Zlaté Moravce</td>
+                                <td>Pozívame vás na valné zhromaždenie. Účasť je nutná.</td>
+                               
+                            </tr>
+                            <tr>
+                                <th scope="row"> 3 </th>
+                                <td>25.4.2023</td>
+                                <td>MSKS Zlaté Moravce</td>
+                                <td>Pozívame vás na valné zhromaždenie. Účasť je nutná.</td>
+                               
+                            </tr>
+                            <tr>
+                                <th scope="row"> 4 </th>
+                                <td>25.4.2023</td>
+                                <td>MSKS Zlaté Moravce</td>
+                                <td>Pozívame vás na valné zhromaždenie. Účasť je nutná.</td>
+                               
+                            </tr>
+                            <tr>
+                                <th scope="row"> 5 </th>
+                                <td>25.4.2023</td>
+                                <td>MSKS Zlaté Moravce</td>
+                                <td>Pozívame vás na valné zhromaždenie. Účasť je nutná.</td>
+                               
+                            </tr>
+                      
+                    </tbody>
+                </table>
     </div>
+    <div class="container px-0 py-3" style="background-color: #01161E;"> 
+        <div class="container-fluid " >  
+        <h1 class="display-4 text-center py-3" style="color: #E4DCCF;">Udialo sa</h1>
+            @php
+                use Illuminate\Support\Str;
+            @endphp
 
-    <div class="container py-3 mb-3 text-center" style="background-color: #E4DCCF;">
-            <span>Stránka: </span>
+            @for($i = 0; $i <  $articlesCount  ; $i++ )
+
+                <article class="container-fluid my-3 py-2" style="background-color: #01161E;">
+                    <div class="row">
+                        <div class="col-sm-4  text-center d-flex align-items-center">
+                            <img class="img-fluid mx-auto" src="{{ asset($articles[$i]['imgPath']) }}" style="height: 250px;">
+                        </div>
+                        <div class="col-sm-8">
+                            <h2 style="color: #E4DCCF;">{{Str::limit($articles[$i]['name'], 30, '...')}}</h2>
+                            <p class="text-justify" style="color: #E4DCCF;">{{Str::limit($articles[$i]['text'], 300, '...')}}</p>
+                            <p style="color: #E4DCCF;">{{$articles[$i]['created_at']}}</p>
+                            <a href="{{ route('view-article', ['id' => $articles[$i]['id']]) }}" style="color: #EFF6E0;">Čítať viac...</a>
+                        </div>
+                    </div>
+                </article>
+            @endfor
+        </div>
+
+        <div class="container py-3 mb-3 text-center" style="background-color: #01161E;">
+            <span style="color: #EFF6E0;">Stránka: </span>
         @for($i = 1; $i <=  $pagesCount  ; $i++ )
             @if( $actualPage == $i )
-                <a href="{{ route('get-articles-of-page', ['id' => $i]) }}" style="color: red;">{{ $i }}</a>
+                <a href="{{ route('get-articles-of-page', ['id' => $i]) }}" style="color: #598392;">{{ $i }}</a>
             @else
-                <a href="{{ route('get-articles-of-page', ['id' => $i]) }}" style="color: black;">{{ $i }}</a>
+                <a href="{{ route('get-articles-of-page', ['id' => $i]) }}" style="color: #EFF6E0;">{{ $i }}</a>
             @endif
             
         @endfor
     </div>
+    </div>
+
+    
 
     <!-- Footer -->  
     @include('footer')
