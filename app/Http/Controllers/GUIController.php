@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Models\Article;
 use App\Models\Gallery;
+use App\Models\PrepareActions;
 
 class GUIController extends Controller
 {
@@ -18,6 +19,7 @@ class GUIController extends Controller
 
             if($page == 'articles'){ $posts = Article::all();}
             else if( $page == 'gallery'){ $posts = Gallery::all();}
+            else if( $page == 'preparedActions'){ $posts = PrepareActions::all();}
             else { $posts = null;}
 
             
