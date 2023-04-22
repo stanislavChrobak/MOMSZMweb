@@ -33,7 +33,7 @@
     <!-- Content -->  
     <div class="container bg-light px-1"> 
 
-        <h1 class="display-4 text-center py-5" style="color: #01161E;">Kontakty</h1>
+        <h1 class="display-4 text-center py-5" style="color: #01161E;">Organizačná štruktúra</h1>
 
         <div class="row pb-5">
             <div class="col d-flex justify-content-around">
@@ -79,6 +79,39 @@
                 </div>
             </div>
         </div> 
+
+        <h1 class="display-4 text-center py-5" style="color: #01161E;">Zanechajte nám správu</h1>
+
+        <div class="row py-5">
+            <div class="col text-center">
+                <h3 class="mb-5">Miestny odbor Matice slovenskej v Zlatých Moravciach</h3>
+                <p>Dom Matice ZM</p>
+                <p>Hlavná 44</p>
+                <p>953 01 Zlaté Moravce</p>
+                <br>
+                <br>
+                <p><b>Tel: 0987 878 969</b></p>
+                <p><b>E-mail: info@maticazm.sk</b></p>
+            </div>
+            <div class="col px-5">
+                <form>
+                    <div class="form-group mb-3">
+                        <label for="name">Meno:</label>
+                        <input type="text" class="form-control" id="name" placeholder="Sem vložte vaše meno.">
+                      </div>
+                    <div class="form-group mb-3">
+                      <label for="email">Email:</label>
+                      <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Sem vložte email.">
+                      <small id="emailHelp" class="form-text text-muted">Nikdy nebudeme zdieľať váš e-mail s nikým iným.</small>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="message">Správa:</label>
+                        <textarea class="form-control" id="message" rows="5" placeholder="Sem vložte vašu správu."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Odoslať</button>
+                  </form>
+            </div>
+        </div>
     </div>
 
     <!-- Footer -->  
