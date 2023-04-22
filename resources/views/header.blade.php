@@ -2,7 +2,7 @@
     <div class="container bg-light px-0">
         <!-- Top navbar --> 
         <nav class="nav justify-content-end">
-            <a class="nav-link active" href="{{ asset('login') }}">Prihlásiť</a>
+            <a class="nav-link active" href="{{ asset('login-gui') }}">Prihlásiť</a>
         </nav>
 
         <!-- Banner-->

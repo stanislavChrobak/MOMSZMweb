@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [\App\Http\Controllers\ArticleController::class, 'GetLastFiveArticles']);
 
-Route::get('/login', function () {
+Route::get('/login-gui', function () {
     return view('login');
 });
 

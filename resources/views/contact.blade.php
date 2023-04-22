@@ -31,8 +31,54 @@
             </div>
         </nav>
     <!-- Content -->  
-    <div class="container bg-light px-1">   
-        
+    <div class="container bg-light px-1"> 
+
+        <h1 class="display-4 text-center py-5" style="color: #01161E;">Kontakty</h1>
+
+        <div class="row pb-5">
+            <div class="col d-flex justify-content-around">
+                <div class="card px-2 pt-2" style="width: 200px;">
+                    <img class="card-img-top" src="{{url('images/womanIcon.png')}}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Eva Nováková</h5>
+                        <p class="card-text text-center"><b>Predseda MOMSZM</b></p>
+                        <p class="card-text text-center">Člen výboru</p>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <div class="row pb-5">
+            <div class="col d-flex justify-content-around">
+                <div class="card px-2 pt-2" style="width: 200px;">
+                    <img class="card-img-top" src="{{url('images/manIcon.png')}}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Ján Vymislený</h5>
+                        <p class="card-text text-center"><b>Podpredseda MOMSZM</b></p>
+                        <p class="card-text text-center">Člen výboru</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col d-flex justify-content-around">
+                <div class="card px-2 pt-2" style="width: 200px;">
+                    <img class="card-img-top" src="{{url('images/manIcon.png')}}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Peter Presný</h5>
+                        <p class="card-text text-center"><b>Ekonóm</b></p>
+                        <p class="card-text text-center">Člen výboru</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col d-flex justify-content-around">
+                <div class="card px-2 pt-2" style="width: 200px;">
+                    <img class="card-img-top" src="{{url('images/manIcon.png')}}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Anton Jednotný</h5>
+                        <p class="card-text text-center"><b>Kronikár</b></p>
+                        <p class="card-text text-center">Člen výboru</p>
+                    </div>
+                </div>
+            </div>
+        </div> 
     </div>
 
     <!-- Footer -->  
