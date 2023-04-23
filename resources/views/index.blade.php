@@ -18,12 +18,12 @@
     <!-- Header -->            
     @include('header')
     <!-- Main navbar-->
-    <nav class="container navbar navbar-expand-lg navbar-light" style="background-color: #E4DCCF;">
+    <nav class="container navbar navbar-expand-lg navbar-light ">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
+                <div class="navbar-nav ">
                     <a class="nav-item nav-link active" aria-current="page" href="{{ asset('/') }}">Úvod</a>
                     <a class="nav-item nav-link" href="{{ asset('gallery') }}">Galéria</a>
                     <a class="nav-item nav-link" href="{{ asset('contact') }}">Kontakt</a>
@@ -32,7 +32,7 @@
         </nav>
     <!-- Content -->  
     @if( $hasPreparingActions )
-        <div class="container px-0 py-5 px-5" style="background-color: #598392;">
+        <div class="container px-0 py-5 px-5" style="background-color: rgb(0, 163, 237,0.2);">
             <h1 class="display-4 text-center py-3" style="color: #01161E;">Pripravujeme</h1>
             <table class="table table-striped ">
                         <thead>
@@ -56,7 +56,7 @@
                     </table>
         </div>
     @endif
-    <div class="container px-0 py-3" style="background-color: #01161E;"> 
+    <div class="container px-0 py-3" style="background-color: #002D3F;"> 
         <div class="container-fluid " >  
         <h1 class="display-4 text-center py-3" style="color: #E4DCCF;">Udialo sa</h1>
             @php
@@ -65,7 +65,7 @@
 
             @for($i = 0; $i <  $articlesCount  ; $i++ )
 
-                <article class="container-fluid my-3 py-2" style="background-color: #01161E;">
+                <article class="container-fluid my-3 py-2" style="background-color: ##002D3F;">
                     <div class="row">
                         <div class="col-sm-4  text-center d-flex align-items-center">
                             <img class="img-fluid mx-auto" src="{{ asset($articles[$i]['imgPath']) }}" style="height: 250px;">
@@ -81,7 +81,7 @@
             @endfor
         </div>
 
-        <div class="container py-3 mb-3 text-center" style="background-color: #01161E;">
+        <div class="container py-3 mb-3 text-center" style="background-color: #002D3F;">
             <span style="color: #EFF6E0;">Stránka: </span>
         @for($i = 1; $i <=  $pagesCount  ; $i++ )
             @if( $actualPage == $i )

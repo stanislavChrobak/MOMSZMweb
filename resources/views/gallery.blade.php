@@ -18,7 +18,7 @@
     <!-- Header -->            
     @include('header')
     <!-- Main navbar-->
-        <nav class="container navbar navbar-expand-lg navbar-light" style="background-color: #E4DCCF;">
+        <nav class="container navbar navbar-expand-lg navbar-light" >
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -31,10 +31,10 @@
             </div>
         </nav>
     <!-- Content -->  
-    <div class="container bg-light px-0 mb-3"> 
+    <div class="container px-0" > 
         @for($i = 0; $i <  $galleriesCount  ; $i++ ) 
-        <div class="container-fluid my-3" style="background-color: #E4DCCF;" >
-            <header class="container-fluid mb-3">
+        <div class="container-fluid py-3" style="background-color: rgb(0, 163, 237,0.2);" >
+            <header class="container-fluid pb-3">
                     <h1 class="display-4 text-center py-3">{{Str::limit($galleries[$i]['name'], 30, '...')}}</h1>
             </header> 
             <div class="row">
@@ -67,7 +67,7 @@
         @endfor
     </div>
 
-    <div class="container py-3 mb-3 text-center" style="background-color: #E4DCCF;">
+    <div class="container py-3 text-center" style="background-color: rgb(0, 163, 237,0.2);">
             <span>Stránka: </span>
         @for($i = 1; $i <=  $pagesCount  ; $i++ )
             @if( $actualPage == $i )

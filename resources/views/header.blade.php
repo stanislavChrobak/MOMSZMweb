@@ -1,9 +1,9 @@
 <header>
     <div class="container bg-light px-0">
         <!-- Top navbar --> 
-        <nav class="nav justify-content-end">
+        <!--<nav class="nav justify-content-end">
             <a class="nav-link active" href="{{ asset('login-gui') }}">Prihlásiť</a>
-        </nav>
+        </nav> -->
 
         <!-- Banner-->
         <div class="d-flex align-items-center" style="background-image: url({{url('images/ZM.jpg')}}); width: 100%;  height: 363px; height: 363px;">
