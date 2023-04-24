@@ -81,8 +81,8 @@
                 </div>
             </div> 
         </div>
-        <div class="container-fluid px-0" style="background-color: rgb(0, 163, 237,0.2);">
-            <h1 class="display-4 text-center py-5" style="color: #01161E;">Zanechajte nám správu</h1>
+        <div id="contactForm" class="container-fluid px-0" style="background-color: rgb(0, 163, 237,0.2);">
+            <h1  class="display-4 text-center py-5" style="color: #01161E;">Zanechajte nám správu</h1>
 
             <div class="row py-5">
                 <div class="col text-center">
@@ -102,13 +102,13 @@
                             <input type="text" class="form-control" id="name" placeholder="Sem vložte vaše meno.">
                         </div>
                         <div class="form-group mb-3">
-                        <label for="email">Email:</label>
-                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Sem vložte email.">
-                        <small id="emailHelp" class="form-text text-muted">Nikdy nebudeme zdieľať váš e-mail s nikým iným.</small>
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Sem vložte email.">
+                            <small id="emailHelp" class="form-text text-muted">Nikdy nebudeme zdieľať váš e-mail s nikým iným.</small>
                         </div>
                         <div class="form-group mb-3">
                             <label for="message">Správa:</label>
-                            <textarea class="form-control" id="message" rows="5" placeholder="Sem vložte vašu správu."></textarea>
+                            <textarea class="form-control" id="message" rows="5" placeholder="Sem vložte vašu správu." maxlength="1000"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Odoslať</button>
                     </form>

@@ -6,7 +6,7 @@
         </nav> -->
 
         <!-- Banner-->
-        <div class="d-flex align-items-center" style="background-image: url({{url('images/ZM.jpg')}}); width: 100%;  height: 363px; height: 363px;">
+        <div class="d-flex align-items-center" style="background-image: url({{url('images/ZM.jpg')}}), linear-gradient(rgba(1,22,30,0.5),rgba(1,22,30,0.1),rgba(1,22,30,0.1)); background-blend-mode: overlay; width: 100%;  height: 363px; height: 363px;">
        
             <div class="card mb-0 mx-1" style="max-width: 540px; opacity: 90%;">
                 <div class="row g-0">
