@@ -31,7 +31,7 @@
             </div>
         </nav>
     <!-- Content -->  
-    <div class="container alert alert-success mb-0 rounded-0" role="alert">
+    <div class="container alert alert-success mb-2" role="alert">
         <h4 class="alert-heading">Cítiš národnú hrdosť? Si lokálpatriot? Pridaj sa k nám a staň sa matičiarom.</h4>
         <p>Každý rok na teba čaká množstvo pripravovaných akcií. <span class="text-muted"> Daj nám o sebe vedieť, náš personalista ťa následne bude kontaktovať.</span></p>
         <a class="btn btn-outline-success my-1" href="{{ asset('contact') }}/#contactForm" role="button">Poslať kontakt</a>
