@@ -38,16 +38,17 @@
     </div>
 
     @if( $hasPreparingActions )
-        <div class="container px-0 py-5 px-5 " style="background-color: rgb(0, 163, 237,0.2);">
+        <div class="container px-0 py-5 px-5" style="background-color: rgb(0, 163, 237,0.2);">
             <h1 class="display-4 text-center py-3" style="color: #01161E;">Pripravujeme</h1>
             <!-- Hidden on mobile phone size -->
-            <table class="table table-striped d-none d-md-block">
+            <table class=" table table-striped d-none d-md-block">
                         <thead>
                             <tr>
                             <th scope="col"></th>  
                             <th scope="col">Kedy</th>    
                             <th scope="col">Kde</th>
                             <th scope="col">Poznámka</th>
+                            <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -57,6 +58,7 @@
                                     <td>{{ $preparingActions[$i]['when'] }}</td>
                                     <td>{{ $preparingActions[$i]['where'] }}</td>
                                     <td>{{Str::limit($preparingActions[$i]['note'], 60, '...')}}</td>
+                                    <td><a class="btn btn-outline-primary" href="{{ route('view-action', ['id' => $preparingActions[$i]['id']]) }}">Čítať viac</a></td>
                                 </tr>  
                             @endfor                     
                         </tbody>

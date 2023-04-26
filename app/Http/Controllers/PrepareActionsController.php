@@ -8,6 +8,11 @@ use App\Models\PrepareActions;
 
 class PrepareActionsController extends Controller
 {
+    public function ViewAction( $id ){
+        $action = PrepareActions::find($id);
+        return view('viewAction')->with('action', $action );
+    }
+
     public function AddPreparedAction(){
         
         $isLoggedInUser = session('isLogggedIn');

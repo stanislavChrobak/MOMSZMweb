@@ -51,14 +51,9 @@ Route::get('/get-galleries-of-page/{id}', [App\Http\Controllers\GalleryControlle
 
 Route::get('/add-action', [\App\Http\Controllers\PrepareActionsController::class, 'AddPreparedAction']);
 Route::post('/submit-add-action', [\App\Http\Controllers\PrepareActionsController::class, 'SubmitAddPrepareAction']);
-/*
 
+Route::get('/view-action/{id}', [App\Http\Controllers\PrepareActionsController::class, 'ViewAction'])->name('view-action');
 
-Route::get('/edit-gallery/{id}', [App\Http\Controllers\GalleryController::class, 'EditGallery'])->name('edit-gallery');
-Route::put('/submit-edit-gallery/{id}', [\App\Http\Controllers\GalleryController::class, 'SubmitEditGallery'])->name('submit-edit-gallery');
-
-Route::delete('/delete-gallery/{id}', [App\Http\Controllers\GalleryController::class, 'DeleteGallery'])->name('delete-gallery');
-*/
 Route::delete('/accept-cookie', [App\Http\Controllers\AdministratorController::class, 'AcceptCookie'])->name('accept-cookie');
 
 Route::post('/submit-login-form', [\App\Http\Controllers\AdministratorController::class, 'UserLogin']);
