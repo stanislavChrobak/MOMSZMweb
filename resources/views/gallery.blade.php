@@ -23,7 +23,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
+                <div class="navbar-nav ps-2">
                     <a class="nav-item nav-link" aria-current="page" href="{{ asset('/') }}">Úvod</a>
                     <a class="nav-item nav-link active" href="{{ asset('gallery') }}">Galéria</a>
                     <a class="nav-item nav-link " href="{{ asset('contact') }}">Kontakt</a>

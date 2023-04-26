@@ -9,7 +9,7 @@
         <!-- Styles -->
         
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>   
+        
 
     </head>
     <body>
@@ -23,7 +23,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav ">
+                <div class="navbar-nav ps-2">
                     <a class="nav-item nav-link active" aria-current="page" href="{{ asset('/') }}">Úvod</a>
                     <a class="nav-item nav-link" href="{{ asset('gallery') }}">Galéria</a>
                     <a class="nav-item nav-link" href="{{ asset('contact') }}">Kontakt</a>
@@ -38,9 +38,10 @@
     </div>
 
     @if( $hasPreparingActions )
-        <div class="container px-0 py-5 px-5" style="background-color: rgb(0, 163, 237,0.2);">
+        <div class="container px-0 py-5 px-5 " style="background-color: rgb(0, 163, 237,0.2);">
             <h1 class="display-4 text-center py-3" style="color: #01161E;">Pripravujeme</h1>
-            <table class="table table-striped ">
+            <!-- Hidden on mobile phone size -->
+            <table class="table table-striped d-none d-sm-block">
                         <thead>
                             <tr>
                             <th scope="col"></th>  
@@ -59,7 +60,17 @@
                                 </tr>  
                             @endfor                     
                         </tbody>
-                    </table>
+            </table>
+            <!-- Hidden on other devices -->
+            <div class="container-fluid d-block d-sm-none text-center">
+                @for( $i = 0; $i < $preparingActionsCount; $i++)
+
+                <p><b>{{ $preparingActions[$i]['note'] }}</b></p>
+                <p><i>{{ $preparingActions[$i]['when'] }}</i></p>
+                <p><i>{{ $preparingActions[$i]['where'] }}</i></p>
+                <br>
+                @endfor
+            </div>
         </div>
     @endif
     <div class="container px-0 py-3" style="background-color: #002D3F;"> 
@@ -71,13 +82,14 @@
 
             @for($i = 0; $i <  $articlesCount  ; $i++ )
 
-                <article class="container-fluid my-3 py-2" style="background-color: ##002D3F;">
+                <article class="container-fluid my-5 py-2" style="background-color: ##002D3F;">
+                <h2 class="text-center pb-2 d-block d-sm-none" style="color: #E4DCCF;">{{Str::limit($articles[$i]['name'], 30, '...')}}</h2>
                     <div class="row">
                         <div class="col-sm-4  text-center d-flex align-items-center">
                             <img class="img-fluid mx-auto" src="{{ asset($articles[$i]['imgPath']) }}" style="height: 250px;">
                         </div>
                         <div class="col-sm-8">
-                            <h2 style="color: #E4DCCF;">{{Str::limit($articles[$i]['name'], 30, '...')}}</h2>
+                            <h2 class="d-none d-sm-block" style="color: #E4DCCF;">{{Str::limit($articles[$i]['name'], 30, '...')}}</h2>
                             <p class="text-justify" style="color: #E4DCCF;">{{Str::limit($articles[$i]['text'], 300, '...')}}</p>
                             <p style="color: #E4DCCF;">{{$articles[$i]['created_at']}}</p>
                             <a href="{{ route('view-article', ['id' => $articles[$i]['id']]) }}" style="color: #EFF6E0;">Čítať viac...</a>
@@ -105,6 +117,7 @@
     <!-- Footer -->  
     @include('footer')
 
-    
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>   -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     </body>
 </html>

@@ -23,7 +23,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
+                <div class="navbar-nav ps-2">
                     <a class="nav-item nav-link" aria-current="page" href="{{ asset('/') }}">Úvod</a>
                     <a class="nav-item nav-link" href="{{ asset('gallery') }}">Galéria</a>
                     <a class="nav-item nav-link active" href="{{ asset('contact') }}">Kontakt</a>
@@ -49,7 +49,7 @@
                 </div>
             </div> 
             <div class="row pb-5">
-                <div class="col d-flex justify-content-around">
+                <div class="col d-flex justify-content-around pb-5">
                     <div class="card px-2 pt-2" style="width: 200px;">
                         <img class="card-img-top" src="{{url('images/manIcon.png')}}" alt="Card image cap">
                         <div class="card-body">
@@ -59,7 +59,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col d-flex justify-content-around">
+                <div class="col d-flex justify-content-around pb-5">
                     <div class="card px-2 pt-2" style="width: 200px;">
                         <img class="card-img-top" src="{{url('images/manIcon.png')}}" alt="Card image cap">
                         <div class="card-body">
@@ -69,7 +69,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col d-flex justify-content-around">
+                <div class="col d-flex justify-content-around pb-5">
                     <div class="card px-2 pt-2" style="width: 200px;">
                         <img class="card-img-top" src="{{url('images/manIcon.png')}}" alt="Card image cap">
                         <div class="card-body">
@@ -85,7 +85,7 @@
             <h1  class="display-4 text-center py-5" style="color: #01161E;">Zanechajte nám správu</h1>
 
             <div class="row py-5">
-                <div class="col text-center">
+                <div class="col text-center px-5">
                     <h3 class="mb-5">Miestny odbor Matice slovenskej v Zlatých Moravciach</h3>
                     <p>Dom Matice ZM</p>
                     <p>Hlavná 44</p>
