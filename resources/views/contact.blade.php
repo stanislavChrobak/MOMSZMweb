@@ -85,7 +85,7 @@
             <h1  class="display-4 text-center py-5" style="color: #01161E;">Zanechajte nám správu</h1>
 
             <div class="row py-5">
-                <div class="col text-center px-5">
+                <div class="col-md text-center px-5 "> <!-- Hidden on small devices -->
                     <h3 class="mb-5">Miestny odbor Matice slovenskej v Zlatých Moravciach</h3>
                     <p>Dom Matice ZM</p>
                     <p>Hlavná 44</p>
@@ -95,7 +95,7 @@
                     <p><b>Tel: 0987 878 969</b></p>
                     <p><b>E-mail: info@maticazm.sk</b></p>
                 </div>
-                <div class="col px-5">
+                <div class="col-md px-5">
                     <form>
                         <div class="form-group mb-3">
                             <label for="name">Meno:</label>

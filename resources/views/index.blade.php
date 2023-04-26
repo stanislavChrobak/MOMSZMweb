@@ -41,7 +41,7 @@
         <div class="container px-0 py-5 px-5 " style="background-color: rgb(0, 163, 237,0.2);">
             <h1 class="display-4 text-center py-3" style="color: #01161E;">Pripravujeme</h1>
             <!-- Hidden on mobile phone size -->
-            <table class="table table-striped d-none d-sm-block">
+            <table class="table table-striped d-none d-md-block">
                         <thead>
                             <tr>
                             <th scope="col"></th>  
@@ -62,13 +62,17 @@
                         </tbody>
             </table>
             <!-- Hidden on other devices -->
-            <div class="container-fluid d-block d-sm-none text-center">
+            <div class="container-fluid d-block d-md-none text-center">
                 @for( $i = 0; $i < $preparingActionsCount; $i++)
 
                 <p><b>{{ $preparingActions[$i]['note'] }}</b></p>
                 <p><i>{{ $preparingActions[$i]['when'] }}</i></p>
                 <p><i>{{ $preparingActions[$i]['where'] }}</i></p>
                 <br>
+                @if(($i + 1 ) < $preparingActionsCount ) 
+                    <hr>
+                    <br>
+                @endif
                 @endfor
             </div>
         </div>
