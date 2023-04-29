@@ -41,14 +41,14 @@
         <div class="container px-0 py-5 px-5" style="background-color: rgb(0, 163, 237,0.2);">
             <h1 class="display-4 text-center py-3" style="color: #01161E;">Pripravujeme</h1>
             <!-- Hidden on mobile phone size -->
-            <table class=" table table-striped d-none d-md-block">
+            <table class=" table table-striped container-fluid d-none d-md-block">
                         <thead>
                             <tr>
-                            <th scope="col"></th>  
-                            <th scope="col">Kedy</th>    
-                            <th scope="col">Kde</th>
-                            <th scope="col">Poznámka</th>
-                            <th scope="col"></th>
+                            <th style="width: 5%" scope="col"></th>  
+                            <th style="width: 20%" scope="col">Kedy</th>    
+                            <th style="width: 20%" scope="col">Kde</th>
+                            <th style="width: 40%" scope="col">Poznámka</th>
+                            <th style="width: 15%" scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>

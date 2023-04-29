@@ -11,7 +11,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     </head>
     <body>
-       <div class="container bg-light px-0" style="min-height: 90vh" >
+       <div class="container bg-light px-0" style="min-height: 85vh" >
             <header>
                 <h1 class="display-1 text-center py-5">Pripravovaná udalosť</h1>
             </header>
@@ -22,10 +22,9 @@
                 <br>
                 <p class="text-center pb-5">{{$action['note']}}</p>
             </div>
-                        
-            <div class="container-fluid py-2 text-center mb-5" style="background-color: #FFF2CC;">
-                <a href="{{ asset('/') }}" class="btn btn-success" role="button">Naspäť</a>
-            </div>
+        </div>
+        <div class="container py-2 text-center" style="background-color: #FFF2CC;">
+            <a href="{{ asset('/') }}" class="btn btn-success" role="button">Naspäť</a>
         </div>
     <!-- Footer -->  
     @include('footer')
