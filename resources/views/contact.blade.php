@@ -84,6 +84,16 @@
         <div id="contactForm" class="container-fluid px-0" style="background-color: rgb(0, 163, 237,0.2);">
             <h1  class="display-4 text-center py-5" style="color: #01161E;">Zanechajte nám správu</h1>
 
+            @if (session()->has('success'))
+                <div class="alert alert-success mb-3 text-center display-5">
+                   {{ session('success') }}
+                </div>
+            @elseif (session()->has('sendingErr'))
+                <div class="alert alert-danger mb-3 text-center display-5">
+                   {{ session('sendingErr') }}
+                </div>
+            @endif
+
             <div class="row py-5">
                 <div class="col-md text-center px-5 "> <!-- Hidden on small devices -->
                     <h3 class="mb-5">Miestny odbor Matice slovenskej v Zlatých Moravciach</h3>
@@ -96,20 +106,30 @@
                     <p><b>E-mail: info@maticazm.sk</b></p>
                 </div>
                 <div class="col-md px-5">
-                    <form>
+                    <form method="POST" action="/send-email">
+                        @csrf
                         <div class="form-group mb-3">
                             <label for="name">Meno:</label>
-                            <input type="text" class="form-control" id="name" placeholder="Sem vložte vaše meno.">
+                            <input type="text" class="form-control" name="name" id="name" placeholder="Sem vložte vaše meno." value="{{ old('name','') }}">
                         </div>
                         <div class="form-group mb-3">
                             <label for="email">Email:</label>
-                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Sem vložte email.">
+                            <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Sem vložte email." value="{{ old('email','') }}">
                             <small id="emailHelp" class="form-text text-muted">Nikdy nebudeme zdieľať váš e-mail s nikým iným.</small>
                         </div>
                         <div class="form-group mb-3">
                             <label for="message">Správa:</label>
-                            <textarea class="form-control" id="message" rows="5" placeholder="Sem vložte vašu správu." maxlength="1000"></textarea>
+                            <textarea class="form-control" id="message" name="message" rows="5" placeholder="Sem vložte vašu správu." maxlength="1000" >{{ old('message','') }}</textarea>
                         </div>
+                        @if ($errors->any())
+                            <div class="alert alert-danger my-3">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                         <button type="submit" class="btn btn-primary">Odoslať</button>
                     </form>
                 </div>

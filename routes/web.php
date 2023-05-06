@@ -59,3 +59,6 @@ Route::delete('/accept-cookie', [App\Http\Controllers\AdministratorController::c
 Route::post('/submit-login-form', [\App\Http\Controllers\AdministratorController::class, 'UserLogin']);
 Route::get('/logout', [\App\Http\Controllers\AdministratorController::class, 'UserLogout']);
 Route::get('/GUI-index/{id}', [\App\Http\Controllers\GUIController::class, 'GetIndex'])->name('GUI-index');
+
+
+Route::post('/send-email', [\App\Http\Controllers\EmailController::class, 'sendEmail']);
