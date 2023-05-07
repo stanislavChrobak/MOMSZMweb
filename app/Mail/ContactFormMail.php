@@ -33,7 +33,7 @@ class ContactFormMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Nový kontakt z www.maticazm.sk',
+            subject: 'Nový kontakt',
         );
     }
 

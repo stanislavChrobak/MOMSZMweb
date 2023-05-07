@@ -50,7 +50,7 @@ class EmailController extends Controller
 
         } catch (\Swift_TransportException $e) {
             
-            return redirect('/contact/#contactForm')->with('sendingErr', 'Správu sa nepodarilo odoslať.');
+            return redirect('/contact/#contactForm')->with('sendingErr', 'Ooops, správu sa nepodarilo odoslať. Chyba je na našej strane. Pokus opakujte neskôr prosím.');
         }
         
         return redirect('/contact/#contactForm')->with('success', 'Správa bola úspešne odoslaná.');

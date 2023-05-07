@@ -17,6 +17,8 @@
     <body>
     <!-- Cookie -->            
     @include('cookieAlert')
+    <!-- Support us banner-->
+    @include('supportUsBanner')
     <!-- Header -->            
     @include('header')
     <!-- Main navbar-->
