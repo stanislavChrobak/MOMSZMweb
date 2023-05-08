@@ -6,9 +6,10 @@
         </nav> -->
 
         <!-- Banner-->
-        <div class="d-flex align-items-center" style="background-image: url({{url('images/ZM.jpg')}}), linear-gradient(rgba(1,22,30,0.5),rgba(1,22,30,0.1),rgba(1,22,30,0.1)); background-blend-mode: overlay; width: 100%;  height: 363px; height: 363px;">
-       
-            <div class="card mb-0 mx-1" style="max-width: 540px; opacity: 90%;">
+        <div class="d-flex align-items-center justify-content-center text-center" style="background-image: url({{url('images/ZM.jpg')}}), linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)); background-blend-mode: overlay; width: 100%;  height: 363px;">
+            <h1 class="text-light display-1 "><span style="font-weight: 700;">Miestny odbor Matice slovenskej</span><br>Zlaté Moravce</h1>
+                        
+            <!--<div class="card mb-0 mx-1" style="max-width: 540px; opacity: 90%;">
                 <div class="row g-0">
                     <div class="col-sm-2 text-center d-flex align-items-center ">
                         <img src="{{url('images/matica_logo.jpg')}}" class="img-fluid"  style="max-height: 150px;" alt="matica_logo">
@@ -20,7 +21,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>--> 
         </div>
 
 
