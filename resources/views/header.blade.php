@@ -6,7 +6,7 @@
         </nav> -->
 
         <!-- Banner-->
-        <div class="d-flex align-items-center justify-content-center text-center" style="background-image: url({{url('images/ZM.jpg')}}), linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)); background-blend-mode: overlay; width: 100%;  height: 363px;">
+        <div class="d-flex align-items-center justify-content-center text-center" style="background-image: url({{url('images/ZM-min.jpg')}}), linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)); background-blend-mode: overlay; width: 100%;  height: 363px;">
             <h1 class="text-light display-1 "><span style="font-weight: 700;">Miestny odbor Matice slovenskej</span><br>Zlaté Moravce</h1>
                         
             <!--<div class="card mb-0 mx-1" style="max-width: 540px; opacity: 90%;">

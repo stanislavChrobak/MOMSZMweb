@@ -30,12 +30,12 @@
 
             <div class="form-group">
                 {!! Form::label('name', 'Meno') !!}
-                {!! Form::text('name', $article['name'], ['class' => 'form-control', 'maxlength' => '49']) !!}
+                {!! Form::text('name', $article['name'], ['class' => 'form-control', 'maxlength' => '300']) !!}
             </div>
 
             <div class="form-group">
                 {!! Form::label('text', 'Obsah článku') !!}
-                {!! Form::textArea('text', $article['text'] , ['class'=> 'form-control', 'maxlength' => '999']) !!}
+                {!! Form::textArea('text', $article['text'] , ['class'=> 'form-control', 'maxlength' => '10000']) !!}
             </div>
 
             <div class="form-group">

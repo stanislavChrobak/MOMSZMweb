@@ -37,23 +37,21 @@
             <h1 class="display-4 text-center py-5" style="color: #E4DCCF;">Organizačná štruktúra</h1>
 
             <div class="row pb-5">
-                <div class="col d-flex justify-content-around">
+                <div class="col d-flex justify-content-around pb-5">
                     <div class="card px-2 pt-2" style="width: 200px;">
                         <img class="card-img-top" src="{{url('images/womanIcon.png')}}" alt="Card image cap">
                         <div class="card-body">
-                            <h5 class="card-title text-center">Eva Nováková</h5>
+                            <h5 class="card-title text-center">Mgr. Simona Holubová</h5>
                             <p class="card-text text-center"><b>Predseda MOMSZM</b></p>
                             <p class="card-text text-center">Člen výboru</p>
                         </div>
                     </div>
                 </div>
-            </div> 
-            <div class="row pb-5">
                 <div class="col d-flex justify-content-around pb-5">
                     <div class="card px-2 pt-2" style="width: 200px;">
                         <img class="card-img-top" src="{{url('images/manIcon.png')}}" alt="Card image cap">
                         <div class="card-body">
-                            <h5 class="card-title text-center">Ján Vymislený</h5>
+                            <h5 class="card-title text-center">Ing. Emil Valent</h5>
                             <p class="card-text text-center"><b>Podpredseda MOMSZM</b></p>
                             <p class="card-text text-center">Člen výboru</p>
                         </div>
@@ -63,18 +61,63 @@
                     <div class="card px-2 pt-2" style="width: 200px;">
                         <img class="card-img-top" src="{{url('images/manIcon.png')}}" alt="Card image cap">
                         <div class="card-body">
-                            <h5 class="card-title text-center">Peter Presný</h5>
-                            <p class="card-text text-center"><b>Ekonóm</b></p>
+                            <h5 class="card-title text-center">Ing. Štefan Chrobák</h5>
+                            <p class="card-text text-center"><b>Hospodár</b></p>
+                            <p class="card-text text-center">Člen výboru</p>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <div class="row pb-5">
+                
+                <div class="col d-flex justify-content-around pb-5">
+                    <div class="card px-2 pt-2" style="width: 200px;">
+                        <img class="card-img-top" src="{{url('images/manIcon.png')}}" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Marián Tomajko</h5>
+                            <p class="card-text text-center"><b></b></p>
+                            <p class="card-text text-center">Člen výboru</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col d-flex justify-content-around pb-5">
+                    <div class="card px-2 pt-2" style="width: 200px;">
+                        <img class="card-img-top" src="{{url('images/manIcon.png')}}" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Ing. Juraj Banský</h5>
+                            <p class="card-text text-center"><b></b></p>
+                            <p class="card-text text-center">Člen výboru</p>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col d-flex justify-content-around pb-5">
+                    <div class="card px-2 pt-2" style="width: 200px;">
+                        <img class="card-img-top" src="{{url('images/womanIcon.png')}}" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Mgr. Ivana Valkovičová</h5>
+                            <p class="card-text text-center"><b></b></p>
                             <p class="card-text text-center">Člen výboru</p>
                         </div>
                     </div>
                 </div>
                 <div class="col d-flex justify-content-around pb-5">
                     <div class="card px-2 pt-2" style="width: 200px;">
-                        <img class="card-img-top" src="{{url('images/manIcon.png')}}" alt="Card image cap">
+                        <img class="card-img-top" src="{{url('images/womanIcon.png')}}" alt="Card image cap">
                         <div class="card-body">
-                            <h5 class="card-title text-center">Anton Jednotný</h5>
-                            <p class="card-text text-center"><b>Kronikár</b></p>
+                            <h5 class="card-title text-center">Paedr. Klaudia Ivanovičová</h5>
+                            <p class="card-text text-center"><b></b></p>
+                            <p class="card-text text-center">Člen výboru</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col d-flex justify-content-around pb-5">
+                    <div class="card px-2 pt-2" style="width: 200px;">
+                        <img class="card-img-top" src="{{url('images/womanIcon.png')}}" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Viera Tomová</h5>
+                            <p class="card-text text-center"><b></b></p>
                             <p class="card-text text-center">Člen výboru</p>
                         </div>
                     </div>
@@ -97,13 +140,13 @@
             <div class="row py-5">
                 <div class="col-md text-center px-5 "> <!-- Hidden on small devices -->
                     <h3 class="mb-5">Miestny odbor Matice slovenskej v Zlatých Moravciach</h3>
-                    <p>Dom Matice ZM</p>
-                    <p>Hlavná 44</p>
+                    <p></p>
+                    <p>Nám. A. Hlinku č.1</p>
                     <p>953 01 Zlaté Moravce</p>
                     <br>
-                    <br>
-                    <p><b>Tel: 0987 878 969</b></p>
-                    <p><b>E-mail: info@maticazm.sk</b></p>
+                    <p><b>Kontaktná osoba:</b> Ing. Štefan Chrobák</p>
+                    <p><b>Tel: 0907 190 722</b></p>
+                    <p><b>E-mail: vtt.chrobak@gmail.com</b></p>
                 </div>
                 <div class="col-md px-5">
                     <form method="POST" action="/send-email">

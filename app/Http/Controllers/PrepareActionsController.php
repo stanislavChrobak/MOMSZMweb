@@ -13,6 +13,25 @@ class PrepareActionsController extends Controller
         return view('viewAction')->with('action', $action );
     }
 
+    public function DeleteAction(Request $request){
+        
+        
+        $isLoggedInUser = session('isLogggedIn');
+
+        if( $isLoggedInUser == "true" ){
+        
+            $action = PrepareActions::find($request->input('post_id'));
+            
+            if( $action ){
+
+                $action->delete();
+            }
+            
+            return redirect('/GUI-index/preparedActions');
+        }
+
+        return view('GUI/loggedOut');       
+    }
     public function AddPreparedAction(){
         
         $isLoggedInUser = session('isLogggedIn');

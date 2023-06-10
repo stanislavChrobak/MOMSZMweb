@@ -150,7 +150,7 @@
                                     <a href="#" style="color: white;">Upraviť</a>
                                 </td>
                                 <td>
-                                    <form action="#" method="POST">
+                                    <form action="{{ route('delete-action', ['id' => $posts[$i]['id']]) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <input type="hidden" name="post_id" value="{{ $posts[$i]['id'] }}">

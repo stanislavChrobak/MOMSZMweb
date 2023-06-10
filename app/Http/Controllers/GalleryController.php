@@ -103,7 +103,13 @@ class GalleryController extends Controller
                 $imagePath7 = Str::replace('storage', '', $gallery->imgPath7);
                 $imagePath8 = Str::replace('storage', '', $gallery->imgPath8); 
                 
-                if (Storage::disk('public')->exists($imagePath1)) {Storage::disk('public')->delete($imagePath1);}
+                
+
+                if (Storage::disk('public')->exists($imagePath1)) 
+                {
+                    //dd($imagePath1);
+                    Storage::disk('public')->delete($imagePath1);
+                }
                 if (Storage::disk('public')->exists($imagePath2)) {Storage::disk('public')->delete($imagePath2);}
                 if (Storage::disk('public')->exists($imagePath3)) {Storage::disk('public')->delete($imagePath3);}
                 if (Storage::disk('public')->exists($imagePath4)) {Storage::disk('public')->delete($imagePath4);}

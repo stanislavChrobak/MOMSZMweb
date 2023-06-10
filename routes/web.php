@@ -51,6 +51,7 @@ Route::get('/get-galleries-of-page/{id}', [App\Http\Controllers\GalleryControlle
 
 Route::get('/add-action', [\App\Http\Controllers\PrepareActionsController::class, 'AddPreparedAction']);
 Route::post('/submit-add-action', [\App\Http\Controllers\PrepareActionsController::class, 'SubmitAddPrepareAction']);
+Route::delete('/delete-action/{id}', [App\Http\Controllers\PrepareActionsController::class, 'DeleteAction'])->name('delete-action');
 
 Route::get('/view-action/{id}', [App\Http\Controllers\PrepareActionsController::class, 'ViewAction'])->name('view-action');
 

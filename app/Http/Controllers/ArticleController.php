@@ -34,7 +34,7 @@ class ArticleController extends Controller
             $numberOfPages++;
         }
 
-        //** preparing actions records */
+        /* preparing actions records */
         $preparingActions = PrepareActions::all();
         $preparingActionsRes = [];
         foreach( $preparingActions as $preparedAction){
