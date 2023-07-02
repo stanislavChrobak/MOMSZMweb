@@ -23,6 +23,10 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
+Route::get('/history', function () {
+    return view('history');
+});
+
 
 Route::get('/gallery', [\App\Http\Controllers\GalleryController::class, 'GetLastFiveGalleries']);
 

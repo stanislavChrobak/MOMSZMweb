@@ -26,6 +26,7 @@
                 <div class="navbar-nav ps-2">
                     <a class="nav-item nav-link" aria-current="page" href="{{ asset('/') }}">Úvod</a>
                     <a class="nav-item nav-link" href="{{ asset('gallery') }}">Galéria</a>
+                    <a class="nav-item nav-link" href="{{ asset('history') }}">História</a>
                     <a class="nav-item nav-link active" href="{{ asset('contact') }}">Kontakt</a>
                 </div>
             </div>
